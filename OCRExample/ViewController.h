@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TesseractOCR/TesseractOCR.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController
+
+@interface ViewController : UIViewController <G8TesseractDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
+    G8Tesseract *tesseract;
+    __weak IBOutlet UIImageView *photoTaken;
+}
+
+- (IBAction)takePhoto:(id)sender;
+- (IBAction)recognizeLetters:(id)sender;
 
 
 @end
